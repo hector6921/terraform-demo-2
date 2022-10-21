@@ -1,0 +1,16 @@
+name: terraform Actions Demo
+on: 
+  push:
+    branches:
+      - main
+
+jobs: 
+  runs-on: ubuntu-latest
+  uses: actions/checkout@v3
+  steps:
+    - name: create infra
+    - run: |
+        cd aws-infra
+        terraform init
+        terraform plan
+        terraform --auto-approve
