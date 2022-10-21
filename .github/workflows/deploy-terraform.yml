@@ -5,10 +5,11 @@ on:
       - main
 
 jobs: 
-  runs-on: ubuntu-latest
+ 
   uses: actions/checkout@v3
   steps:
     - name: create infra
+        runs-on: ubuntu-latest
     - run: |
         cd aws-infra
         terraform init
